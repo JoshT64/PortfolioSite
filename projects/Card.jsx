@@ -31,14 +31,17 @@ export default function Card() {
         return (
           <animated.div key={idx}>
             <h1 className="m-2  text-3xl">{`${project.name}:`}</h1>
-            <img
-              className="m-4 border"
-              style={{
-                borderRadius: '1rem',
-                height: '27rem',
-              }}
-              src={project.img}
-            />
+            <a href={project.link}>
+              <img
+                className="m-4 border"
+                style={{
+                  borderRadius: '1rem',
+                  height: '27rem',
+                }}
+                src={project.img}
+              />
+            </a>
+
             <p
               className="text-gray-500 m-auto"
               style={{ width: '35rem', textAlign: 'center' }}

@@ -4,6 +4,7 @@ const projects = [
     img: '/clipsonrepeat.jpg',
     description:
       'Web App that plays Twitch clips forever. Utilizes the Twitch API to grab a random clip based on certain parameters',
+    link: 'https://www.clipsonrepeat.com/',
   },
   { name: 'Simp Clicker', img: 'test', description: 'This is a description' },
   {
