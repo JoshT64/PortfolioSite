@@ -4,6 +4,7 @@ import Card from '../projects/Card';
 
 export default function Body() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled2, setIsScrolled2] = useState(false);
 
   const props = useSpring({
     to: { opacity: 1, x: 0 },
@@ -26,10 +27,29 @@ export default function Body() {
       duration: 300,
     },
   });
+
+  const props3 = useSpring({
+    to: { opacity: 1, x: 0 },
+    from: { opacity: 0, x: 25 },
+    delay: 300,
+    config: { mass: 3, tension: 1700, friction: 1000, duration: 250 },
+    reverse: isScrolled2 ? true : false,
+  });
+
+  // useEffect(() => {
+  //   window.onscroll = () => {
+
+  //     console.log(isScrolled2);
+  //     // return () => (window.onscroll = null);
+  //   };
+  // }, []);
+
   useEffect(() => {
     window.onscroll = () => {
       setIsScrolled(window.pageYOffset < 300 ? false : true);
-      return () => (window.onscroll = null);
+      setIsScrolled2(window.pageYOffset > 380 ? false : true);
+      console.log(isScrolled2);
+      // return () => (window.onscroll = null);
     };
   }, []);
 
@@ -80,7 +100,9 @@ export default function Body() {
         <div id="projects" className="mt-4 mb-16 col-span-2 mr-10">
           <br></br>
           <h1 className="text-3xl bg-purple-100 inline-block">Projects</h1>
-          <Card />
+          <animated.div>
+            <Card style={props3} />
+          </animated.div>
         </div>
         {/* ===== SKILLS ===== */}
         <div className="   col-span-1">
