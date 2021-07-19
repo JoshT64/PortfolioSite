@@ -3,8 +3,11 @@ import Body from './body';
 
 export default function Header() {
   return (
-    <div className="flex items-center mr-auto border-b-2  h-16 m-0 min-w-full justify-between">
-      <h1 className="m-4">JOSHCOIN</h1>
+    <div
+      style={{ fontSize: '1.02rem' }}
+      className="header flex items-center mr-auto  sticky top-0 bottom-0 self-start  h-20 m-0 min-w-full justify-between z-10"
+    >
+      <h1 className="m-4  sticky">JOSHCOIN</h1>
       <ul className="text-center m-8 ">
         <li
           onClick={() => {
