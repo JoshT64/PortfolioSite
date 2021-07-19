@@ -28,7 +28,7 @@ export default function Body() {
   });
   useEffect(() => {
     window.onscroll = () => {
-      setIsScrolled(window.pageYOffset < 360 ? false : true);
+      setIsScrolled(window.pageYOffset < 300 ? false : true);
       return () => (window.onscroll = null);
     };
   }, []);
